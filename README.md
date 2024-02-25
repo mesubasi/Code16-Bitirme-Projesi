@@ -59,8 +59,6 @@ Projeyi kullanmak için web tarayıcınızda `localhost` üzerinde çalışan su
 
 ### Ekran Görüntüleri
 
-Projenizin ekran görüntülerini buraya ekleyin. Markdown kullanarak bir resim eklemek için:
-
 ```markdown
 ![1](https://github.com/mesubasi/Code16-Bitirme-Projesi/assets/88106043/db1a0af7-d20f-43ec-8486-86aefabb7f8a)
 ![2](https://github.com/mesubasi/Code16-Bitirme-Projesi/assets/88106043/3c225f15-ca6f-46c8-802d-5720a3a247c3)
