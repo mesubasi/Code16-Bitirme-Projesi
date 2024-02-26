@@ -21,7 +21,7 @@
 - react-chartjs-2
 - react-icons
 - react-router-dom
-- [Cors Anywhere](https://github.com/Rob--W/cors-anywhere)
+- [Cors Anywhere](https://github.com/Rob--W/cors-anywhere) (Web Servisi olarak API de yaşanan CORS durumu için kullanılmıştır. )
 
 ### Kurulum
 
