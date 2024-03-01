@@ -22,7 +22,7 @@
 - react-icons
 - react-router-dom
 - [Cors Anywhere](https://github.com/Rob--W/cors-anywhere) (Web Servisi olarak API de yaşanan CORS durumu için kullanılmıştır. )
-- [Açık Veri Platformu - APII](https://acikyesil.bursa.bel.tr/)
+- [Açık Veri Platformu - API](https://acikyesil.bursa.bel.tr/)
   
 ### Kurulum
 
