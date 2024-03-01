@@ -15,8 +15,8 @@ export default async function sendMail(req, res) {
       port: process.env.EMAIL_PORT,
       secure: true,
       auth: {
-        user: "resend",
-        pass: process.env.RESEND_API_KEY,
+        user: process.env.EMAIL_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 

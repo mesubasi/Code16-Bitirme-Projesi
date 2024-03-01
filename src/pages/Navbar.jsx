@@ -15,12 +15,6 @@ const Navbar = () => {
     }
   }, []);
 
-  // Oturum durumunu kontrol et
-  useEffect(() => {
-    const loggedInStatus = localStorage.getItem("isLoggedIn");
-    setIsLoggedIn(loggedInStatus === "true");
-  }, [isLoggedIn]);
-
   // Çıkış Yap işlevi
   const handleLogout = () => {
     // Oturumu temizle
