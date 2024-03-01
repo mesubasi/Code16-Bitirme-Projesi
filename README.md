@@ -4,7 +4,7 @@
 
 ## Proje Hakkında
 
-"Su Hayattır" projesi, Bursa Büyükşehir Belediyesi ve Üretken Akademi Code16 Programı işbirliği ile geliştirilmiş, su tasarrufu konusunda toplumsal farkındalık oluşturma amacı güden bir bitirme projesidir. Bu proje, suyun kıymetini vurgulayarak, kullanıcıları bu değerli kaynağı daha bilinçli tüketmeye yönlendirmeyi amaçlar. OpenAI teknolojisinin desteğiyle, Bursa'nın açık veri kaynaklarından elde edilen baraj verileri kullanılarak, günlük su durumu hakkında bilgilendirici mesajlar oluşturulup kullanıcılara e-posta yoluyla iletilmektedir. Bu yöntemle, günlük bir su tasarrufu farkındalığı hedeflenmektedir. Ayrıca, projenin "Üretken AI" bölümünde, çeşitli API'ler aracılığıyla farklı hizmetlere erişim sağlanması planlanmaktadır. Şu an için tek bir API ile işlev gösteren bu bölüm, zamanla genişletilerek OpenAI ile eşzamanlı olarak çalışıp daha fazla veri kaynağından yararlanmayı ve yapay zekanın gücüyle daha efektif cevaplar verilebilmesi hedeflenmektedir.Şimdilik tek API ile hizmet veren bu bölüm için sorgu örneği "İNEGÖL nöbetçi eczane" ile kullanıcılar, bulundukları bölgedeki nöbetçi eczanelere kolayca ulaşabilirler.
+"Su Hayattır" projesi, Bursa Büyükşehir Belediyesi ve Üretken Akademi Code16 İleri React Programı işbirliği ile geliştirilmiş, su tasarrufu konusunda toplumsal farkındalık oluşturma amacı güden bir bitirme projesidir. Bu proje, suyun kıymetini vurgulayarak, kullanıcıları bu değerli kaynağı daha bilinçli tüketmeye yönlendirmeyi amaçlar. OpenAI teknolojisinin desteğiyle, Bursa'nın açık veri kaynaklarından elde edilen baraj verileri kullanılarak, günlük su durumu hakkında bilgilendirici mesajlar oluşturulup kullanıcılara e-posta yoluyla iletilmektedir. Bu yöntemle, günlük bir su tasarrufu farkındalığı hedeflenmektedir. Ayrıca, projenin "Üretken AI" bölümünde, çeşitli API'ler aracılığıyla farklı hizmetlere erişim sağlanması planlanmaktadır. Şu an için tek bir API ile işlev gösteren bu bölüm, zamanla genişletilerek OpenAI ile eşzamanlı olarak çalışıp daha fazla veri kaynağından yararlanmayı ve yapay zekanın gücüyle daha efektif cevaplar verilebilmesi hedeflenmektedir.Şimdilik tek API ile hizmet veren bu bölüm için sorgu örneği "İNEGÖL nöbetçi eczane" ile kullanıcılar, bulundukları bölgedeki nöbetçi eczanelere kolayca ulaşabilirler.
 
 ### Kullanılan Teknolojiler
 
@@ -16,13 +16,14 @@
 - dotenv
 - express
 - framer-motion
-- nodemailer ([Resend](resend.com) Mail Hizmeti Kullanılmıştır)
+- nodemailer ([Gmail](gmail.com) SMTP Hizmeti Kullanılmıştır)
 - openai
 - react-chartjs-2
 - react-icons
 - react-router-dom
 - [Cors Anywhere](https://github.com/Rob--W/cors-anywhere) (Web Servisi olarak API de yaşanan CORS durumu için kullanılmıştır. )
-
+- [Açık Veri Platformu - APII](https://acikyesil.bursa.bel.tr/)
+  
 ### Kurulum
 
 Projeyi yerel olarak kurup çalıştırmak için aşağıdaki adımları takip edin:
@@ -32,10 +33,10 @@ Projeyi yerel olarak kurup çalıştırmak için aşağıdaki adımları takip e
     ```
    REACT_APP_OPENAI_API_KEY=OpenAI API Anahtarınız
    PORT=3000
-   EMAIL_HOST=smtp.resend.com // SMTP Sunucunuz
+   EMAIL_HOST=smtp.gmail.com // SMTP Sunucunuz
    EMAIL_PORT=465
    EMAIL_USER=Mail Adresiniz // SMTP Olarak Kullanacağınız Mail Adresiniz
-   RESEND_API_KEY=Resend.com API Anahtarınız
+   EMAIL_PASSWORD=Uygulama Şifresi // Gmail den Uygulama Şifresi Almanız Gerekmektedir
     ```
 
 2. Proje deposunu klonlayın ve bağımlılıkları yükleyin:
