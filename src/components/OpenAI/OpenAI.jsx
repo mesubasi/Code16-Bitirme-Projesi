@@ -30,7 +30,7 @@ const OpenAI = ({
         const response = await openaiClient.completions.create({
           model: "gpt-3.5-turbo-instruct",
           prompt: prompt,
-          max_tokens: 400,
+          max_tokens: 1024,
           temperature: 0.5,
         });
         setOpenAIResponse(response.choices[0].text.trim());
