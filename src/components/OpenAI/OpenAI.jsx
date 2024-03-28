@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import openai from "openai";
 
-const OpenAI = ({
-  measurement,
-  measurement2,
-  setMeasurement,
-  setOpenAIResponse,
-}) => {
+const OpenAI = ({ measurement, measurement2, setOpenAIResponse }) => {
   const [openaiApiKey, setOpenaiApiKey] = useState(""); // OpenAI API anahtarını saklamak için bir state
 
   const apiKeys = process.env.REACT_APP_OPENAI_API_KEY; // API anahtarını çevre değişkeninden al
@@ -30,7 +25,7 @@ const OpenAI = ({
         const response = await openaiClient.completions.create({
           model: "gpt-3.5-turbo-instruct",
           prompt: prompt,
-          max_tokens: 400,
+          max_tokens: 1024,
           temperature: 0.5,
         });
         setOpenAIResponse(response.choices[0].text.trim());

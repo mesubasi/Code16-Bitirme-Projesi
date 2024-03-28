@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Analysis from "./Analysis"; 
 
 const GeneralSituation = () => {
   const [barajVerileri, setBarajVerileri] = useState([]);
@@ -20,7 +21,6 @@ const GeneralSituation = () => {
           oluHacim: baraj.oluHacim,
           kalanHacim: baraj.kalanHacim,
           barajKapasitesi: baraj.barajKapasitesi,
-          metrekup: baraj.toplamHacim * 1000, // Örnek metreküp hesaplama
         }));
         setBarajVerileri(formattedData);
         localStorage.setItem("barajVerileri", JSON.stringify(formattedData));
@@ -32,70 +32,41 @@ const GeneralSituation = () => {
     fetchData();
   }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
     <div className="min-h-screen max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <h2 className="text-2xl font-semibold text-gray-900">Baraj Verileri</h2>
-      <div className="mt-5">
-        <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+    <h2 className="text-2xl font-semibold text-white">Baraj Verileri</h2>
+    <div className="mt-5">
+      <div className="shadow overflow-hidden sm:rounded-lg">
+        <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Baraj ID
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Baraj Adı
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Kret Kotu
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Max Su Kotu
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Min Su Kotu
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Toplam Hacim
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Olu Hacim
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Ölü Hacim
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Kalan Hacim
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Baraj Kapasitesi
                 </th>
               </tr>
@@ -125,7 +96,7 @@ const GeneralSituation = () => {
                     {baraj.oluHacim} m³
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {baraj.kalanHacim} m³
+                    {baraj.kalanHacim.toFixed(0)} m³
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {baraj.barajKapasitesi} m³
@@ -134,57 +105,34 @@ const GeneralSituation = () => {
               ))}
             </tbody>
           </table>
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold text-white">
-              Terimlerin Açıklamaları:
-            </h3>
-            <ul className="list-disc pl-5 text-sm text-white space-y-2">
-              <li>
-                <p className="inline">Baraj ID:</p>
-                <strong className="font-semibold text-white">
-                  Her baraj için benzersiz bir tanımlayıcı.
-                </strong>
-              </li>
-              <li>
-                <strong>Baraj ID:</strong> Her baraj için benzersiz bir
-                tanımlayıcı.
-              </li>
-              <li>
-                <strong>Baraj Adı:</strong> Barajın resmi adı.
-              </li>
-              <li>
-                <strong>Kret Kotu:</strong> Barajın taşkın kontrol seviyesi;
-                barajın güvenle tutabileceği maksimum yükseklik.
-              </li>
-              <li>
-                <strong>Max Su Kotu:</strong> Baraj gölünün ulaşabileceği
-                maksimum su seviyesi.
-              </li>
-              <li>
-                <strong>Min Su Kotu:</strong> Barajın işlevsel kalabilmesi için
-                gereken minimum su seviyesi.
-              </li>
-              <li>
-                <strong>Toplam Hacim:</strong> Barajın toplam su hacmi
-                kapasitesi.
-              </li>
-              <li>
-                <strong>Ölü Hacim:</strong> Baraj gölünün minimum operasyonel
-                seviyesi ile maksimum seviyesi arasında kalan su hacmi.
-              </li>
-              <li>
-                <strong>Kalan Hacim:</strong> Mevcut su seviyesi itibariyle,
-                barajın daha fazla su tutma kapasitesi.
-              </li>
-              <li>
-                <strong>Baraj Kapasitesi:</strong> Barajın maksimum su tutma
-                kapasitesi.
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
+      <div className="mt-8 bg-white shadow rounded-lg p-4">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          Terimlerin Açıklamaları:
+        </h3>
+        <ul className="list-disc pl-5 text-sm text-gray-600 space-y-2">
+          {[
+            { term: "Baraj ID", description: "Her baraj için benzersiz bir tanımlayıcı." },
+            { term: "Baraj Adı", description: "Barajın resmi adı." },
+            { term: "Kret Kotu", description: "Barajın taşkın kontrol seviyesi; barajın güvenle tutabileceği maksimum yükseklik." },
+            { term: "Max Su Kotu", description: "Baraj gölünün ulaşabileceği maksimum su seviyesi." },
+            { term: "Min Su Kotu", description: "Barajın işlevsel kalabilmesi için gereken minimum su seviyesi." },
+            { term: "Toplam Hacim", description: "Barajın toplam su hacmi kapasitesi." },
+            { term: "Ölü Hacim", description: "Baraj gölünün minimum operasyonel seviyesi ile maksimum seviyesi arasında kalan su hacmi." },
+            { term: "Kalan Hacim", description: "Mevcut su seviyesi itibariyle, barajın daha fazla su tutma kapasitesi." },
+            { term: "Baraj Kapasitesi", description: "Barajın maksimum su tutma kapasitesi." }
+          ].map((item) => (
+            <li key={item.term}>
+              <strong>{item.term}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+    <Analysis />
+  </div>
+  
   );
 };
 
