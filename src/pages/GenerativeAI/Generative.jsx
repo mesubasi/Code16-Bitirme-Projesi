@@ -12,10 +12,12 @@ const Generative = () => {
     setModalOpenState(false);
   };
 
+  const cors_anywhere = process.env.CORS_ANYWHERE;
+
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://cors-anywhere-p2im.onrender.com/https://www.beo.org.tr/nobet-belediye"
+        `${cors_anywhere}/https://www.beo.org.tr/nobet-belediye`
       );
       if (!response.ok) {
         throw new Error("Veri çekme işlemi başarısız");

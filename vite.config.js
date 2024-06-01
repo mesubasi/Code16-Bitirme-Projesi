@@ -15,6 +15,7 @@ export default ({ mode }) => {
       "process.env.REACT_APP_OPENAI_API_KEY": JSON.stringify(
         env.REACT_APP_OPENAI_API_KEY
       ),
+      "process.env.CORS_ANYWHERE": JSON.stringify(env.CORS_ANYWHERE),
     },
   });
 };

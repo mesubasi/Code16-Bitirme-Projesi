@@ -1,9 +1,11 @@
-import React from "react";
 
 const fetchMeasurement = async () => {
+
+  const cors_anywhere = process.env.CORS_ANYWHERE;
+
   try {
     const response = await fetch(
-      "https://cors-anywhere-p2im.onrender.com/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj/dolulukOrani/gunluk?barajID=1"
+      `${cors_anywhere}/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj/dolulukOrani/gunluk?barajID=1`
     );
     if (!response.ok) throw new Error("Network response was not ok.");
     const data = await response.json();
