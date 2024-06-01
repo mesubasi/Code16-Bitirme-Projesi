@@ -23,41 +23,42 @@
 - react-router-dom
 - [Cors Anywhere](https://github.com/Rob--W/cors-anywhere) (Web Servisi olarak API de yaşanan CORS durumu için kullanılmıştır. )
 - [Açık Veri Platformu - API](https://acikyesil.bursa.bel.tr/)
-  
+
 ### Kurulum
 
 Projeyi yerel olarak kurup çalıştırmak için aşağıdaki adımları takip edin:
 
 1. Kök dizinde `.env` dosyası oluşturun ve gerekli ortam değişkenlerini tanımlayın. Örnek bir `.env` dosyası şu şekilde olmaktadır:
 
-    ```
+   ```
    REACT_APP_OPENAI_API_KEY=OpenAI API Anahtarınız
    PORT=3000
    EMAIL_HOST=smtp.gmail.com // SMTP Sunucunuz
    EMAIL_PORT=465
    EMAIL_USER=Mail Adresiniz // SMTP Olarak Kullanacağınız Mail Adresiniz
    EMAIL_PASSWORD=Uygulama Şifresi // Gmail den Uygulama Şifresi Almanız Gerekmektedir
-    ```
+   CORS_ANYWHERE = // CORS Proxy Sağlamanız Gerekmektedir
+   ```
 
 2. Proje deposunu klonlayın ve bağımlılıkları yükleyin:
 
-    ```bash
-    git clone https://github.com/mesubasi/Code16-Bitirme-Projesi.git
-    cd Code16-Bitirme-Projesi
-    npm install
-    ```
+   ```bash
+   git clone https://github.com/mesubasi/Code16-Bitirme-Projesi.git
+   cd Code16-Bitirme-Projesi
+   npm install
+   ```
 
 3. Geliştirme sunucusunu başlatın:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 Bu komutlar projeyi geliştirme modunda çalıştırır ve tarayıcınızda otomatik olarak açılmalıdır.
 
 ### Kullanım
 
-Projeyi kullanmak için web tarayıcınızda `localhost` üzerinde çalışan sunucuya gidin. Giriş sekmesinde yeni bir sayfa oluşturabilir ya da varsayılan olan k.adı ve parola "123" olarak giriş yapabilirsiniz ya da kayıt olarak lokal de barındırılan veriler ile sisteme giriş yapabilirsiniz. Giriş yaptıktan sonra AI bölümü açıldığında bu kısımm da veriler geldikten sonra isterseniz belirtilen kısıma mail adresini kaydedip Üretken AI butonuna tıklayarak mesaj oluşturabilir ve daha sonrasında gönder butonu ile mesajı mail olarak gönderebilirsiniz. Mail adresleri ekleme kısmındaki diğer bir çözüm ise  src/components/Mail/bcc_mail.js dosyasında ise liste şeklinde statik olarak mail adresleri ekleyebilirsiniz.
+Projeyi kullanmak için web tarayıcınızda `localhost` üzerinde çalışan sunucuya gidin. Giriş sekmesinde yeni bir sayfa oluşturabilir ya da varsayılan olan k.adı ve parola "123" olarak giriş yapabilirsiniz ya da kayıt olarak lokal de barındırılan veriler ile sisteme giriş yapabilirsiniz. Giriş yaptıktan sonra AI bölümü açıldığında bu kısımm da veriler geldikten sonra isterseniz belirtilen kısıma mail adresini kaydedip Üretken AI butonuna tıklayarak mesaj oluşturabilir ve daha sonrasında gönder butonu ile mesajı mail olarak gönderebilirsiniz. Mail adresleri ekleme kısmındaki diğer bir çözüm ise src/components/Mail/bcc_mail.js dosyasında ise liste şeklinde statik olarak mail adresleri ekleyebilirsiniz.
 
 ### Ekran Görüntüleri
 
