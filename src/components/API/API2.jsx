@@ -5,7 +5,7 @@ const fetchMeasurement2 = async () => {
 
   try {
     const response = await fetch(
-      `${cors_anywhere}/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj/dolulukOrani/gunluk?barajID=2`
+      `https://${cors_anywhere}/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj/dolulukOrani/gunluk?barajID=2`
     );
     if (!response.ok) throw new Error("Network response was not ok.");
     const data = await response.json();

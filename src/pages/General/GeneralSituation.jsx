@@ -10,7 +10,7 @@ const GeneralSituation = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${cors_anywhere}/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj`
+          `https://${cors_anywhere}/https://acikveri.buski.gov.tr:9016/acik/yesil/v1/baraj`
         );
         const data = await response.json();
         const formattedData = data.sonuc.map((baraj) => ({

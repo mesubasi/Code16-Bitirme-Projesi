@@ -17,7 +17,7 @@ const Generative = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `${cors_anywhere}/https://www.beo.org.tr/nobet-belediye`
+        `https://${cors_anywhere}/https://www.beo.org.tr/nobet-belediye`
       );
       if (!response.ok) {
         throw new Error("Veri çekme işlemi başarısız");
